@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Filter = ({ filter, onChengeFilter }) => {
   return (
     <div>
@@ -8,3 +10,7 @@ const Filter = ({ filter, onChengeFilter }) => {
 };
 
 export default Filter;
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onChengeFilter: PropTypes.func.isRequired,
+};

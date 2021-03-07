@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const TodoList = ({ todos, onDeleteContact }) => {
   return (
     <ul>
@@ -13,3 +15,8 @@ const TodoList = ({ todos, onDeleteContact }) => {
   );
 };
 export default TodoList;
+
+TodoList.propTypes = {
+  todos: PropTypes.object.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};

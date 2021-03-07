@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(255, 246, 203);
+}
+input {
+  background-color: rgb(255, 246, 203);
+  border: none;
+}
+button {
+  margin-left: 10px;
+}
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50px;
+  padding: 12px;
+  background-color: rgb(186, 247, 196);
+  button {
+    margin-left: 10px;
+    background: rgb(255, 246, 203);
+    border-radius: 8px;
+  }
+}

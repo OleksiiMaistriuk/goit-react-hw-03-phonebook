@@ -1,8 +1,8 @@
 import PhonebookServis from './Components/PhonebookServis/PhonbookServis';
-
+import styles from './styles.module.scss';
 const App = () => {
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <PhonebookServis />
     </div>
   );

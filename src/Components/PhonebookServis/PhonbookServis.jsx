@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PhonebookFormServis from './PhonebookFormServis';
 import TodoList from '../PhonebookComponents/ContactList';
 import Filter from '../PhonebookComponents/FormFilter';
@@ -32,8 +32,15 @@ const PhonebookServis = () => {
     name.toLowerCase().includes(normalizeFilter),
   );
 
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem('todos')));
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   return (
-    <div>
+    <>
       <PhonebookFormServis onSubmit={handleSubmit} />
       {todos.length > 1 && (
         <Filter filter={filter} onChengeFilter={handleChengeFilter} />
@@ -43,7 +50,7 @@ const PhonebookServis = () => {
         todos={filtrContactList}
         onDeleteContact={handleDeleteContact}
       />
-    </div>
+    </>
   );
 };
 export default PhonebookServis;

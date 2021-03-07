@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 import PhoneBookForm from '../PhonebookComponents/PhonebookForm';
 
@@ -29,7 +30,7 @@ const PhonebookFormServis = ({ onSubmit }) => {
   };
 
   return (
-    <div>
+    <>
       <PhoneBookForm
         name={name}
         number={number}
@@ -37,8 +38,11 @@ const PhonebookFormServis = ({ onSubmit }) => {
         onInpuChangeName={handleInpuChangeName}
         onInpuChangeNumber={handleInpuChangeNumber}
       />
-    </div>
+    </>
   );
 };
 
 export default PhonebookFormServis;
+PhonebookFormServis.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
